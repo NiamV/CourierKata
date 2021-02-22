@@ -28,3 +28,9 @@ Tests: succeeded 7, failed 0, canceled 0, ignored 0, pending 0
 All tests passed.
 ```
 
+
+
+#### 2)
+
+We can add a new parameter to cost, a boolean `speedy` that represents if Speedy Shipping was chosen. The same tests can be used again, this time with this cost added if required.
+
