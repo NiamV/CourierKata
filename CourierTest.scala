@@ -398,4 +398,240 @@ class CourierTest extends FunSuite{
                 , 600)
         )
     }
+
+    // Tests introduced in part 5
+
+    test("Small Parcel mania (4)"){
+        input = Array(
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 4)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 9),
+                    (Type("Discount"), -3) // Small
+                )
+                , 15)
+        )
+    }
+
+    test("Small Parcel mania (5)"){
+        input = Array(
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 4),
+            new Package(3, 5, 8, 1)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 9),
+                    (Type("Small"), 3),
+                    (Type("Discount"), -3) // Small
+                )
+                , 15)
+        )
+    }
+
+    test("Small Parcel mania (8)"){
+        input = Array(
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 4),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 1),
+            new Package(3, 5, 8, 4)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 9),
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 3),
+                    (Type("Small"), 9),
+                    (Type("Discount"), -3), // Small
+                    (Type("Discount"), -3), // Small
+                )
+                , 30)
+        )
+    }
+
+    test("Medium Parcel mania (3)"){
+        input = Array(
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 5)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 12),
+                    (Type("Discount"), -8) //Medium
+                )
+                , 20)
+        )
+    }
+
+    test("Medium Parcel mania (4)"){
+        input = Array(
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 5)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 12),
+                    (Type("Discount"), -8) // Medium
+                )
+                , 28)
+        )
+    }
+
+    test("Medium Parcel mania (6)"){
+        input = Array(
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 5),
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 2),
+            new Package(15, 25, 40, 5)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 12),
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 8),
+                    (Type("Medium"), 12),
+                    (Type("Discount"), -8), // Medium
+                    (Type("Discount"), -8), // Medium
+                )
+                , 40)
+        )
+    }
+
+    test("Mixed Parcel mania (5)"){
+        input = Array(
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 8)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 19),
+                    (Type("Discount"), -15)
+                )
+                , 64)
+        )
+    }
+
+    test("Mixed Parcel mania (7)"){
+        input = Array(
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 8)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 19),
+                    (Type("Discount"), -15)
+                )
+                , 94)
+        )
+    }
+
+    test("Mixed Parcel mania (10)"){
+        input = Array(
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 8),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 4),
+            new Package(30, 50, 80, 8)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 19),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 15),
+                    (Type("Large"), 19),
+                    (Type("Discount"), -15),
+                    (Type("Discount"), -15)
+
+                )
+                , 128)
+        )
+    }
 }
