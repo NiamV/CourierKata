@@ -1,5 +1,7 @@
 # Courier Kata - Niam Vaishnav
 
+I have used Scala and ScalaTest to solve and test this problem.
+
 #### 1)
 
 For this section, I have created a class `Package` that encapsulates a single package, and a class `CostCalculator` that will determine the cost of a list of packages stored in an array. The tests I need are:
@@ -150,7 +152,15 @@ All tests passed.
 
 
 
+Unfortunately I did not have time to implement the other clash cases. The next things I would do are:
 
+- Decide tests for when clashes may occur, such as having 9 small parcels or 8 medium parcels
+- Implement the solution to these cases by adapting `Cost.scala`
+- Refactor the discounts code in `Cost.scala` and size cases in `Package.scala` as there is a lot of repeated code that could be put into a function
+
+
+
+Niam Vaishnav
 
 
 
