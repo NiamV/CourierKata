@@ -85,9 +85,10 @@ class CourierTest extends FunSuite{
                     (Type("Small"), 3),
                     (Type("Medium"), 8),
                     (Type("Large"), 15),
-                    (Type("XL"), 25)
+                    (Type("XL"), 25),
+                    (Type("Discount"), -3)
                 )
-                , 102)
+                , 99)
         )
     }
 
@@ -174,9 +175,10 @@ class CourierTest extends FunSuite{
                     (Type("Medium"), 8),
                     (Type("Large"), 15),
                     (Type("XL"), 25),
-                    (Type("Speedy"), 102)
+                    (Type("Discount"), -3),
+                    (Type("Speedy"), 99),
                 )
-                , 204)
+                , 198)
         )
     }
 
@@ -254,9 +256,10 @@ class CourierTest extends FunSuite{
                     (Type("Small"), 7),
                     (Type("Medium"), 12),
                     (Type("Large"), 19),
-                    (Type("XL"), 29)
+                    (Type("XL"), 29),
+                    (Type("Discount"), -3)
                 )
-                , 118)
+                , 115)
         )
     }
 
@@ -334,9 +337,10 @@ class CourierTest extends FunSuite{
                     (Type("Medium"), 12),
                     (Type("Large"), 19),
                     (Type("XL"), 29),
-                    (Type("Speedy"), 118)
+                    (Type("Discount"), -3),
+                    (Type("Speedy"), 115)
                 )
-                , 236)
+                , 230)
         )
     }
 

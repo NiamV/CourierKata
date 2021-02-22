@@ -122,9 +122,9 @@ First we can design tests for when there are no clashes in discounts:
 - 3, 5 and 6 medium parcels (Medium parcel mania)
 - 5, 7 and 10 large parcels (Mixed parcel mania)
 
-For the first two, when we have more than 5 packages, we need to make sure that two are discounted. I also need to change the tests I have previously implemented that have 8 packages. Luckily, the only possible discount that can be applied is Mixed Parcel Mania, so there are no clashes.
+I also need to change the tests I have previously implemented that have 8 packages. Luckily, the only possible discount that can be applied is Mixed Parcel Mania, so there are no clashes.
 
-We can implement this, assuming there are no clashes, by changing the `cost` function in `CostCalculator`. We can keep track of how many
+We can implement this, assuming there are no clashes, by changing the `cost` function in `CostCalculator`. We can keep track of how many of each 
 
 
 
