@@ -2,7 +2,7 @@
 class CostCalculator(packages: Array[Package]){
 
     def cost(): Int = {
-
+        
     }
     
 }
