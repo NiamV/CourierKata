@@ -339,4 +339,63 @@ class CourierTest extends FunSuite{
                 , 236)
         )
     }
+
+    // Tests introduced in part 4
+
+    test("Single heavy (small size)"){
+        input = Array(new Package(3, 5, 8, 60))
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == (List((Type("Heavy"), 60)), 60))
+    }
+
+    test("Single heavy (XL size)"){
+        input = Array(new Package(70, 140, 210, 60))
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == (List((Type("Heavy"), 60)), 60))
+    }
+
+    test("Multiple heavy"){
+        input = Array(
+            new Package(3, 5, 8, 60),
+            new Package(15, 25, 40, 70),
+            new Package(30, 50, 80, 80),
+            new Package(70, 140, 210, 90)
+        )
+        costCalculator = new CostCalculator(input, false)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Heavy"), 60),
+                    (Type("Heavy"), 70),
+                    (Type("Heavy"), 80),
+                    (Type("Heavy"), 90)
+                )
+                , 300)
+        )
+    }
+
+    test("Multiple heavy (Speedy)"){
+        input = Array(
+            new Package(3, 5, 8, 60),
+            new Package(15, 25, 40, 70),
+            new Package(30, 50, 80, 80),
+            new Package(70, 140, 210, 90)
+        )
+        costCalculator = new CostCalculator(input, true)
+
+        assert(costCalculator.cost() == 
+            (
+                List(
+                    (Type("Heavy"), 60),
+                    (Type("Heavy"), 70),
+                    (Type("Heavy"), 80),
+                    (Type("Heavy"), 90),
+                    (Type("Speedy"), 300)
+                )
+                , 600)
+        )
+    }
 }

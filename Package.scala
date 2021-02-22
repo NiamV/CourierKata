@@ -1,5 +1,5 @@
 // Class to represent the type of the package
-// Size can only take the values Small, Medium, Large, XL, Speedy
+// Size can only take the values Small, Medium, Large, XL, Speedy, Heavy
 case class Type(size: String)
 
 // Class representing the package

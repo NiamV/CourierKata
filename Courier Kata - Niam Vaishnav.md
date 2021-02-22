@@ -104,3 +104,12 @@ Tests: succeeded 26, failed 0, canceled 0, ignored 0, pending 0
 All tests passed.
 ```
 
+
+
+#### 4)
+
+Assuming that the heavy package type overrides the size type, we need to introduce tests for the heavy packages:
+
+- Individual heavy package for different sizes
+- Multiple heavy packages
+- Heavy package with speedy delivery
