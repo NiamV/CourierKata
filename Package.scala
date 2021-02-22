@@ -5,4 +5,7 @@ class Package(width: Int, height: Int, depth: Int){
     def maxSize(): Int = {
         return List(width, height, depth).max
     }
+
+    def cost(): Int = {
+    }
 }
