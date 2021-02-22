@@ -39,13 +39,7 @@ The test results are:
 ```bash
 Run starting. Expected test count is: 14
 CourierTest:
-- Empty
-- Single small
-- Single medium
-- Single large
-- Single extra large
-- One of each
-- Two of each
+(Tests from part 1)
 - Empty (Speedy)
 - Single small (Speedy)
 - Single medium (Speedy)
@@ -71,20 +65,7 @@ This again passes all of the tests:
 ```scala
 Run starting. Expected test count is: 26
 CourierTest:
-- Empty
-- Single small
-- Single medium
-- Single large
-- Single extra large
-- One of each
-- Two of each
-- Empty (Speedy)
-- Single small (Speedy)
-- Single medium (Speedy)
-- Single large (Speedy)
-- Single extra large (Speedy)
-- One of each (Speedy)
-- Two of each (Speedy)
+(Tests from parts 1 and 2)
 - Single small (Overweight)
 - Single medium (Overweight)
 - Single large (Overweight)
@@ -113,3 +94,69 @@ Assuming that the heavy package type overrides the size type, we need to introdu
 - Individual heavy package for different sizes
 - Multiple heavy packages
 - Heavy package with speedy delivery
+
+To implement this, we need a check in the `Package` class for if the package is heavy. The test results are:
+
+```bash
+Run starting. Expected test count is: 30
+CourierTest:
+(Tests from parts 1 to 3)
+- Single heavy (small size)
+- Single heavy (XL size)
+- Multiple heavy
+- Multiple heavy (Speedy)
+Run completed in 171 milliseconds.
+Total number of tests run: 30
+Suites: completed 1, aborted 0
+Tests: succeeded 30, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.
+```
+
+
+
+#### 5)
+
+First we can design tests for when there are no clashes in discounts:
+
+- 4, 5 and 8 small parcels (Small parcel mania) 
+- 3, 5 and 6 medium parcels (Medium parcel mania)
+- 5, 7 and 10 large parcels (Mixed parcel mania)
+
+For the first two, when we have more than 5 packages, we need to make sure that two are discounted. I also need to change the tests I have previously implemented that have 8 packages. Luckily, the only possible discount that can be applied is Mixed Parcel Mania, so there are no clashes.
+
+We can implement this, assuming there are no clashes, by changing the `cost` function in `CostCalculator`. We can keep track of how many
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
