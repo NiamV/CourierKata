@@ -124,7 +124,29 @@ First we can design tests for when there are no clashes in discounts:
 
 I also need to change the tests I have previously implemented that have 8 packages. Luckily, the only possible discount that can be applied is Mixed Parcel Mania, so there are no clashes.
 
-We can implement this, assuming there are no clashes, by changing the `cost` function in `CostCalculator`. We can keep track of how many of each 
+We can implement this, assuming there are no clashes, by changing the `cost` function in `CostCalculator`. We can keep track of how many of each package we have seen, and then applying the discounts at the end if we have enough.
+
+Again this passes all of the tests:
+
+```bash
+Run starting. Expected test count is: 39
+CourierTest:
+(Tests from parts 1 to 4)
+- Small Parcel mania (4)
+- Small Parcel mania (5)
+- Small Parcel mania (8)
+- Medium Parcel mania (3)
+- Medium Parcel mania (4)
+- Medium Parcel mania (6)
+- Mixed Parcel mania (5)
+- Mixed Parcel mania (7)
+- Mixed Parcel mania (10)
+Run completed in 256 milliseconds.
+Total number of tests run: 39
+Suites: completed 1, aborted 0
+Tests: succeeded 39, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.
+```
 
 
 

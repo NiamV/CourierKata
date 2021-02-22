@@ -447,7 +447,7 @@ class CourierTest extends FunSuite{
                     (Type("Small"), 3),
                     (Type("Discount"), -3) // Small
                 )
-                , 15)
+                , 18)
         )
     }
 
