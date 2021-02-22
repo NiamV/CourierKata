@@ -1,4 +1,8 @@
-// Class that determines the cost of a package
-class Cost(package: Package){
+// Class that determines the cost of a set of packages
+class CostCalculator(packages: Array[Package]){
+
+    def cost(): Int = {
+
+    }
     
 }
