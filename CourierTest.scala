@@ -189,21 +189,21 @@ class CourierTest extends FunSuite{
         assert(costCalculator.cost() == (List((Type("Small"), 9)), 9))
     }
 
-    test("Single medium"){
+    test("Single medium (Overweight)"){
         input = Array(new Package(15, 25, 40, 5))
         costCalculator = new CostCalculator(input, false)
 
         assert(costCalculator.cost() == (List((Type("Medium"), 12)), 12))
     }
 
-    test("Single large"){
+    test("Single large (Overweight)"){
         input = Array(new Package(30, 50, 80, 9))
         costCalculator = new CostCalculator(input, false)
 
         assert(costCalculator.cost() == (List((Type("Large"), 21)), 21))
     }
 
-    test("Single extra large"){
+    test("Single extra large (Overweight)"){
         input = Array(new Package(70, 140, 210, 15))
         costCalculator = new CostCalculator(input, false)
 
@@ -295,7 +295,7 @@ class CourierTest extends FunSuite{
             new Package(30, 50, 80, 8),
             new Package(70, 140, 210, 9)
         )
-        costCalculator = new CostCalculator(input, false)
+        costCalculator = new CostCalculator(input, true)
 
         assert(costCalculator.cost() == 
             (
@@ -321,7 +321,7 @@ class CourierTest extends FunSuite{
             new Package(30, 50, 80, 8),
             new Package(70, 140, 210, 12)
         )
-        costCalculator = new CostCalculator(input, false)
+        costCalculator = new CostCalculator(input, true)
 
         assert(costCalculator.cost() == 
             (

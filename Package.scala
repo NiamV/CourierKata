@@ -19,13 +19,30 @@ class Package(width: Int, height: Int, depth: Int, weight: Int){
 
         // Cases
         if(m < 10){
-            c = (Type("Small"), 3)
+            if(weight > 1){
+                c = (Type("Small"), 3 + 2*(weight - 1))
+            } else {
+                c = (Type("Small"), 3)
+            }
+            
         } else if(m < 50){
-            c = (Type("Medium"), 8)
+            if(weight > 3){
+                c = (Type("Medium"), 8 + 2*(weight - 3))
+            } else {
+                c = (Type("Medium"), 8)
+            }
         } else if(m < 100){
-            c = (Type("Large"), 15)
+            if(weight > 6){
+                c = (Type("Large"), 15 + 2*(weight - 6))
+            } else {
+                c = (Type("Large"), 15)
+            }
         } else {
-            c = (Type("XL"), 25)
+            if(weight > 10){
+                c = (Type("XL"), 25 + 2*(weight - 10))
+            } else {
+                c = (Type("XL"), 25)
+            }   
         }
 
         return c

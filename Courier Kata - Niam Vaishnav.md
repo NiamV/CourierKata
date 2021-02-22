@@ -65,3 +65,42 @@ All tests passed.
 #### 3)
 
 Now we can add a new parameter to `Package` for the weight. For the testing, we need to duplicate all of the tests so far, one of which has the weights within the limit, and the other without.
+
+This again passes all of the tests:
+
+```scala
+Run starting. Expected test count is: 26
+CourierTest:
+- Empty
+- Single small
+- Single medium
+- Single large
+- Single extra large
+- One of each
+- Two of each
+- Empty (Speedy)
+- Single small (Speedy)
+- Single medium (Speedy)
+- Single large (Speedy)
+- Single extra large (Speedy)
+- One of each (Speedy)
+- Two of each (Speedy)
+- Single small (Overweight)
+- Single medium (Overweight)
+- Single large (Overweight)
+- Single extra large (Overweight)
+- One of each, two of which are overweight
+- Two of each, one overweight for each
+- Single small (Speedy, Overweight)
+- Single medium (Speedy, Overweight)
+- Single large (Speedy, Overweight)
+- Single extra large (Speedy, Overweight)
+- One of each, two of which are overweight (Speedy)
+- Two of each, one overweight for each (Speedy)
+Run completed in 172 milliseconds.
+Total number of tests run: 26
+Suites: completed 1, aborted 0
+Tests: succeeded 26, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.
+```
+
