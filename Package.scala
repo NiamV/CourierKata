@@ -3,8 +3,8 @@
 case class Type(size: String)
 
 // Class representing the package
-// Parameterised by 3 integers representing the dimensions in centimeters
-class Package(width: Int, height: Int, depth: Int){
+// Parameterised by 3 integers representing the dimensions in centimeters and kilograms
+class Package(width: Int, height: Int, depth: Int, weight: Int){
     // Largest dimension for finding cost
     def maxSize(): Int = {
         return List(width, height, depth).max

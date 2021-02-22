@@ -34,3 +34,34 @@ All tests passed.
 
 We can add a new parameter to cost, a boolean `speedy` that represents if Speedy Shipping was chosen. The same tests can be used again, this time with this cost added if required.
 
+The test results are:
+
+```bash
+Run starting. Expected test count is: 14
+CourierTest:
+- Empty
+- Single small
+- Single medium
+- Single large
+- Single extra large
+- One of each
+- Two of each
+- Empty (Speedy)
+- Single small (Speedy)
+- Single medium (Speedy)
+- Single large (Speedy)
+- Single extra large (Speedy)
+- One of each (Speedy)
+- Two of each (Speedy)
+Run completed in 151 milliseconds.
+Total number of tests run: 14
+Suites: completed 1, aborted 0
+Tests: succeeded 14, failed 0, canceled 0, ignored 0, pending 0
+All tests passed.
+```
+
+
+
+#### 3)
+
+Now we can add a new parameter to `Package` for the weight. For the testing, we need to duplicate all of the tests so far, one of which has the weights within the limit, and the other without.

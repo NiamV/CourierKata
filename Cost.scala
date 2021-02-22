@@ -1,7 +1,7 @@
 // Class that determines the cost of a set of packages
 class CostCalculator(packages: Array[Package], speedy: Boolean){
 
-    // Returns an array of 
+    // Returns an array of packages and costs, and the final costs
     def cost(): (List[(Type, Int)], Int) = {
         var totalCost = 0
         var indivCosts = List[(Type, Int)]()
@@ -11,6 +11,7 @@ class CostCalculator(packages: Array[Package], speedy: Boolean){
             totalCost += p.cost()._2
         }
 
+        // Cost increase if speedy chosen
         if(speedy){
             indivCosts = indivCosts :+ (Type("Speedy"), totalCost)
             totalCost = totalCost * 2
